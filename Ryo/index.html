@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Veterinaria RYO</title>
+		<link rel="stylesheet" href="styles.css" />
+		<script src="agregaralcarrito.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="container-hero">
+				<div class="container hero">
+					<div class="customer-support">
+						<i class="fa-solid fa-headset"></i>
+						<div class="content-customer-support">
+							<span class="text">Soporte al cliente</span>
+							<span class="number">+52 554901 4066</span>
+						</div>
+					</div>
+
+					<div class="container-logo">
+						<img src="img/logo4.png" alt="Logo de RYO">
+						<!-- Reemplaza "ruta/a/tu/imagen/logo.png" con la ruta real de tu imagen -->
+						<!-- También puedes agregar el atributo "alt" para proporcionar un texto alternativo -->
+					</div>
+					
+					<!DOCTYPE html>
+					<html>
+					<head>
+						<meta charset="utf-8">
+						<title>Formulario</title>
+						<!-- Agrega el enlace a Font Awesome -->
+						<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+						<style>
+							/* Estilos CSS */
+							.container-user {
+								display: flex;
+								align-items: center;
+							}
+							.container-user a {
+								text-decoration: none;
+								color: inherit;
+							}
+							.container-user .fa-user {
+								margin-right: 5px;
+							}
+							/* Ajustar el tamaño del icono de la canasta */
+							.container-user .fa-shopping-basket {
+								font-size: 24px; /* Ajusta el tamaño según sea necesario */
+								color: orange; /* Color naranja */
+							}
+							/* Estilos adicionales para el contenido del carrito de compras */
+							.content-shopping-cart {
+								margin-left: 5px; /* Ajustar margen izquierdo según sea necesario */
+							}
+						</style>
+					</head>
+					<body>
+						<div class="container-user">
+							<!-- Icono de usuario como enlace -->
+							<a href="registro.php" style="text-decoration: none; color: inherit;">
+								<i class="fas fa-user"></i>
+							</a>
+
+
+<!-- Icono de carrito de compras -->
+<i class="fas fa-shopping-basket"></i>
+
+<!-- Contenido del carrito de compras -->
+<div class="content-shopping-cart" id="cart-button" onclick="irATicket()">
+    <span class="text">Carrito</span>
+    <span class="number" id="cart-counter">(0)</span>
+</div>
+
+
+
+						</div>
+						
+					
+					</body>
+					</html>
+					
+				</div>
+			</div>
+
+			<div class="container-navbar">
+				<nav class="navbar container">
+					<i class="fa-solid fa-bars"></i>
+					<ul class="menu">
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="servicios.html">Servicios</a></li>
+						<li><a href="consejos.html">Consejos</a></li>
+						<li><a href="galeria.html">Galería</a></li>
+						<li><a href="productos.html">Productos</a></li>
+						<li><a href="notas.html">Notas</a></li>
+						<li><a href="session.html">session</a></li>
+					</ul>
+					<form class="search-form">
+						<input type="search" placeholder="Buscar..." />
+						<button class="btn-search">
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</button>
+					</form>
+				</nav>
+				
+			</div>
+		</header>
+
+		<section class="banner">
+			<div class="content-banner">
+				<p>Solo Mascotas felices</p>
+				<h2>Aqui en RYO <br />Cuidamos a tus mejores amigos <br /> con amor !!!! </h2>
+				<a href="#" id="masInformacionBtn">Más Información</a>
+				<div id="infoTexto" style="display: none;">
+					<br></br> 
+					<p>En RYO, nos comprometemos a proporcionar un entorno excepcional para tus amigos de cuatro patas. Desde amplias áreas de recreo hasta atención personalizada, cuidamos cada aspecto de la vida de tus mascotas con el máximo amor y dedicación. Nuestro equipo altamente capacitado se esfuerza por crear un ambiente donde tus amigos peludos se sientan seguros, felices y amados. En RYO, no solo ofrecemos servicios, sino que formamos parte de la familia de tus mascotas, garantizando su bienestar en cada paso del camino. Confía en nosotros para cuidar a tus mejores amigos con amor y compromiso.</p>
+				</div>
+			</div>
+		</section>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+    const masInformacionBtn = document.getElementById("masInformacionBtn");
+    const infoTexto = document.getElementById("infoTexto");
+
+    masInformacionBtn.addEventListener("click", function(event) {
+        event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+
+        if (infoTexto.style.display === "none") {
+            infoTexto.style.display = "block";
+            masInformacionBtn.style.backgroundColor = "#D2B48C"; // Cambia el color del botón a beige al hacer clic
+        } else {
+            infoTexto.style.display = "none";
+            masInformacionBtn.style.backgroundColor = "var(--primary-color)"; // Restaura el color original del botón
+        }
+    });
+});
+
+		</script>
+		
+
+		<main class="main-content">
+			<section class="container container-features">
+				<div class="card-feature">
+					<i class="fa-solid fa-plane-up"></i>
+					<div class="feature-content">
+						<span>Envío gratuito a nivel Estatal</span>
+						<p>En pedido superior a $150</p>
+					</div>
+				</div>
+				<div class="card-feature">
+					<i class="fa-solid fa-wallet"></i>
+					<div class="feature-content">
+						<span>Contrareembolso</span>
+						<p>100% garantía de devolución de dinero</p>
+					</div>
+				</div>
+				<div class="card-feature">
+					<i class="fa-solid fa-gift"></i>
+					<div class="feature-content">
+						<span>Ofertas de regalo especial</span>
+						<p>Ofrece gift cards con regalo</p>
+					</div>
+				</div>
+				<div class="card-feature">
+					<i class="fa-solid fa-headset"></i>
+					<div class="feature-content">
+						<span>Servicio al cliente 24/7</span>
+						<p>LLámenos 24/7 al +52 554901 4066</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="container top-categories">
+				<h1 class="heading-1">Mejores Ofertas</h1>
+				<div class="container-categories">
+					<div class="card-category category-moca">
+						<p>Accesorios</p>
+						<a href="productos.html">Ver más</a>
+					</div>
+					<div class="card-category category-expreso">
+						<p>Salud</p>
+						<a href="consejos.html">Ver más</a>
+					</div>
+					<div class="card-category category-capuchino">
+						<p>Belleza</p>
+						<a href="productos.html">Ver más</a>
+					</div>
+				</div>
+			</section>
+			
+
+			<section class="container top-products">
+				<h1 class="heading-1">Mejores Productos</h1>
+				<div class="container-products">
+
+
+
+					<!-- Producto 1 -->
+<div class="card-product">
+    <div class="container-img">
+        <img src="img/pedigree.png" alt="Cafe Irish" />
+        <span class="discount">-20%</span>
+        <div class="button-group">
+			<a href="pedigree.html" class="eye-link">
+                <span>
+                    <i class="fa-regular fa-eye"></i>
+                </span>
+            </a>
+			<a href="https://www.pedigree.com.mx/" class="compare-link">
+				<span>
+					<i class="fa-solid fa-code-compare"></i>
+				</span>
+			</a>
+			
+        </div>
+    </div>
+    <div class="content-card-product">
+        <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+        </div>
+        <h3>Pedigree</h3>
+        <!-- Llamada a la función agregarAlCarrito() cuando se hace clic en el botón -->
+        <span class="add-cart btn-add-to-cart" onclick="agregarAlCarrito('Pedigree')">
+            <i class="fa-solid fa-basket-shopping"></i>
+        </span>
+        <p class="price">$99 <span>$151</span></p>
+    </div>                    
+</div>
+
+
+
+<!-- Producto 2 - Dog chow -->
+<div class="card-product">
+	<div class="container-img">
+		<img src="img/Dog chow.png" alt="Dog chow" />
+		<span class="discount">-22%</span>
+		<div class="button-group">
+			<a href="dogchow.html" class="eye-link">
+				<span>
+					<i class="fa-regular fa-eye"></i>
+		</span>
+		</a>
+				<a href="https://purina.com.mx/dogchow" class="compare-link">
+					<span>
+						<i class="fa-solid fa-code-compare"></i>
+					</span>
+				</a>
+		</div>
+	</div>
+    <div class="content-card-product">
+        <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+        </div>
+        <h3>Dog chow</h3>
+        <span class="add-cart btn-add-to-cart" onclick="agregarAlCarrito('Dog chow', 299)">
+            <i class="fa-solid fa-basket-shopping"></i>
+        </span>
+        <p class="price">$299 <span>$323</span></p>
+    </div>
+</div>
+
+
+					<!-- producto 3  -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="img/nupec.png" alt="Nupec" />
+							<div class="button-group">
+                                <a href="nupec.html" class="eye-link">
+                                    <span>
+                                        <i class="fa-regular fa-eye"></i>
+                            </span>
+                            </a>
+                            <a href="https://nupec.com/" class="compare-link">
+                                <span>
+                                    <i class="fa-solid fa-code-compare"></i>
+                                </span>
+                            </a>
+                    </div>
+                </div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
+							<h3>Nupec</h3>
+							<span class="add-cart btn-add-to-cart" onclick="agregarAlCarrito('Nupec', 599)">
+								<i class="fa-solid fa-basket-shopping"></i>
+							</span>
+							<p class="price">$599</p>
+						</div>
+					</div>
+
+
+
+					<!-- producto 4 -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="img/Royal.png" alt="Royal" />
+							<div class="button-group">
+								<a href="royalcanin.html" class="eye-link">
+									<span>
+										<i class="fa-regular fa-eye"></i>
+							</span>
+							</a>
+							<a href="https://www.royalcanin.com/mx" class="compare-link">
+								<span>
+									<i class="fa-solid fa-code-compare"></i>
+								</span>
+							</a>
+					</div>
+				</div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-regular fa-star"></i>
+							</div>
+							<h3>Royal</h3>
+							<span class="add-cart btn-add-to-cart" onclick="agregarAlCarrito('Royal', 499)">
+								<i class="fa-solid fa-basket-shopping"></i>
+							</span>
+							<p class="price">$499</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="gallery">
+				<img
+					src="img/gif.gif"
+					alt="Gallery Img1"
+					class="gallery-img-1"
+				/><img
+					src="img/img2.png"
+					alt="Gallery Img2"
+					class="gallery-img-2"
+				/><img
+					src="img/gif4.gif"
+					alt="Gallery Img3"
+					class="gallery-img-3"
+				/><img
+					src="img/img4.png"
+					alt="Gallery Img4"
+					class="gallery-img-4"
+				/><img
+					src="img/gif5.gif"
+					alt="Gallery Img5"
+					class="gallery-img-5"
+				/>
+			</section>
+
+			<section class="container specials">
+				<h1 class="heading-1">Descuentos Especiales</h1>
+
+				<div class="container-products">
+					<!-- Producto 1 -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="img/cat chow.png" alt="Cafe Irish" />
+							<span class="discount">-13%</span>
+							<div class="button-group">
+								<a href="catchow.html" class="eye-link">
+									<span>
+										<i class="fa-regular fa-eye"></i>
+							</span>
+							</a>
+							<a href="https://purina.com.mx/catchow" class="compare-link">
+								<span>
+									<i class="fa-solid fa-code-compare"></i>
+								</span>
+							</a>
+					</div>
+				</div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-regular fa-star"></i>
+							</div>
+							<h3>Cat Chow</h3>
+							<span class="add-cart">
+								<i class="fa-solid fa-basket-shopping"></i>
+							</span>
+							<p class="price">$199 <span>$311</span></p>
+						</div>
+					</div>
+					<!-- Producto 2 -->
+					<div class="card-product">
+						<div class="container-img">
+							<img
+								src="img/pasta.png"
+								alt="Cafe incafe-ingles.jpg"
+							/>
+							<span class="discount">-22%</span>
+							<div class="button-group">
+								<a href="pasta.html" class="eye-link">
+									<span>
+										<i class="fa-regular fa-eye"></i>
+							</span>
+							</a>
+							<a href="https://www.fancypets.mx/" class="compare-link">
+								<span>
+									<i class="fa-solid fa-code-compare"></i>
+								</span>
+							</a>
+					</div>
+				</div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-regular fa-star"></i>
+								<i class="fa-regular fa-star"></i>
+							</div>
+							<h3>Pasta Dental</h3>
+							<span class="add-cart">
+								<i class="fa-solid fa-basket-shopping"></i>
+							</span>
+							<p class="price">$89 <span>$129</span></p>
+						</div>
+					</div>
+					<!--  -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="img/animal planet.png" alt="Cafe Viena" />
+							<span class="discount">-30%</span>
+							<div class="button-group">
+								<a href="shampoo.html" class="eye-link">
+									<span>
+										<i class="fa-regular fa-eye"></i>
+							</span>
+							</a>
+							<a href="https://animalplanetmexico.com/" class="compare-link">
+								<span>
+									<i class="fa-solid fa-code-compare"></i>
+								</span>
+							</a>
+					</div>
+				</div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
+							<h3>Shampoo Animal P</h3>
+							<span class="add-cart">
+								<i class="fa-solid fa-basket-shopping"></i>
+							</span>
+							<p class="price">$131 <span>$211</span></p>
+						</div>
+					</div>
+					<!--  -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="img/sobre.png" alt="Cafe Liqueurs" />
+							<div class="button-group">
+								<a href="sobre.html" class="eye-link">
+									<span>
+										<i class="fa-regular fa-eye"></i>
+							</span>
+							</a>
+							<a href="https://purina.com.mx/catchow" class="compare-link">
+								<span>
+									<i class="fa-solid fa-code-compare"></i>
+								</span>
+							</a>
+					</div>
+				</div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-regular fa-star"></i>
+							</div>
+							<h3>Cat Chow Pez</h3>
+							<span class="add-cart">
+								<i class="fa-solid fa-basket-shopping"></i>
+							</span>
+							<p class="price">$19</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="container blogs">
+				<h1 class="heading-1">Notas Interesantes del Dia</h1>
+				<div class="container-blogs">
+					<div class="card-blog">
+						<div class="container-img">
+							<img src="img/razas pequeñas.png" alt="Imagen Blog 1" />
+							<div class="button-group-blog">
+							
+							</div>
+						</div>
+						<div class="content-blog">
+							<h3>Razas Pequeñas</h3>
+							<span>Nota Interesante</span>
+							<p>Contenido del blog...</p>
+							<a href="notas.html" class="btn-read-more">Leer más</a> <!-- Enlace al notas.html -->
+						</div>
+					</div>
+					<div class="card-blog">
+						<div class="container-img">
+							<img src="img/razas medianas.png" alt="Imagen Blog 2" />
+							<div class="button-group-blog">
+								
+							</div>
+						</div>
+						<div class="content-blog">
+							<h3>Razas Medianas</h3>
+							<span>Nota Interesante</span>
+							<p>Contenido del blog...</p>
+							<a href="notas.html" class="btn-read-more">Leer más</a> <!-- Enlace al notas.html -->
+						</div>
+					</div>
+					<div class="card-blog">
+						<div class="container-img">
+							<img src="img/grazas grandes.png" alt="Imagen Blog 3" />
+							<div class="button-group-blog">
+								
+							</div>
+						</div>
+						<div class="content-blog">
+							<h3>Razas Grandes</h3>
+							<span>Nota Interesante</span>
+							<p>Contenido del blog...</p>
+							<a href="notas.html" class="btn-read-more">Leer más</a> <!-- Enlace al notas.html -->
+						</div>
+					</div>
+				</div>
+			</section>
+			
+		</main>
+
+		<footer class="footer">
+			<div class="container container-footer">
+				<div class="menu-footer">
+					<div class="contact-info">
+						<p class="title-footer">Información de Contacto</p>
+						<ul>
+							<li>
+								Dirección: Republica Mexicana, Coacalco de Berriozabal
+							</li>
+							<li>Teléfono: +52 554901 4066</li>
+							<li>Tik Tok: JooryMoba</li>
+							<li>EmaiL: jorgemoralesbarreragames@gmail.com</li>
+						</ul>
+						<div class="social-icons">
+							<span class="facebook">
+								<i class="fa-brands fa-facebook-f"></i>
+							</span>
+							<span class="twitter">
+								<i class="fa-brands fa-twitter"></i>
+							</span>
+							<span class="youtube">
+								<i class="fa-brands fa-youtube"></i>
+							</span>
+							<span class="pinterest">
+								<i class="fa-brands fa-pinterest-p"></i>
+							</span>
+							<span class="instagram">
+								<i class="fa-brands fa-instagram"></i>
+							</span>
+						</div>
+					</div>
+
+					<div class="information">
+						<p class="title-footer">Información</p>
+						<ul>
+							<li><a href="#">Acerca de Nosotros</a></li>
+							<li><a href="#">Politicas de Privacidad</a></li>
+							<li><a href="#">Términos y condiciones</a></li>
+						</ul>
+					</div>
+
+					<div class="newsletter">
+						<p class="title-footer"> Siguenos en nuestra cuenta de INSTAGRAM</p>
+
+						<div class="content">
+							<p>
+								Unete a nuestra familia y disfruta de nuestras actualizaciones diarias
+							</p>
+							<a href="https://www.instagram.com/ryovet/" target="_blank" rel="noopener noreferrer">
+								<button>Follow Us</button>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="copyright">
+					<p>
+						Desarrollado por Joory Moba para Ryo &copy; 2024
+					</p>
+				</div>
+			</div>
+		</footer>
+
+		<script
+			src="https://kit.fontawesome.com/81581fb069.js"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
+
+
+
+
+

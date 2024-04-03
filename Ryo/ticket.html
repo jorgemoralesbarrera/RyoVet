@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket de Compra</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+    <style>
+        /* Estilos CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .total {
+            font-weight: bold;
+            font-size: 18px;
+            text-align: right;
+            margin-top: 20px;
+        }
+        .logo {
+            width: 50%; /* Ajusta el tamaño del logo */
+            display: block; /* Permite alinear el logo horizontalmente */
+            margin: 0 auto; /* Centra el logo horizontalmente */
+        }
+        .download-pdf {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .download-pdf button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="RYO2.png" alt="Logo"> <!-- Agrega aquí la ruta a tu logo -->
+        <h1>Ticket de Compra</h1>
+        <ul id="lista-productos">
+            <!-- Aquí se insertarán dinámicamente los productos seleccionados -->
+        </ul>
+        <p class="total">Total: $<span id="total"></span></p>
+        <div class="download-pdf">
+            <button onclick="descargarPDF()">Descargar PDF</button>
+        </div>
+    </div>
+
+    <script>
+        // Función para obtener los parámetros de la URL
+        function obtenerParametrosURL() {
+            let parametros = {};
+            let url = window.location.href;
+            let inicio = url.indexOf("?");
+            if (inicio !== -1) {
+                let cadenaParametros = url.substring(inicio + 1);
+                let pares = cadenaParametros.split("&");
+                for (let i = 0; i < pares.length; i++) {
+                    let par = pares[i].split("=");
+                    if (par.length === 2 && par[0] !== "" && par[1] !== "") { // Verificar si hay un nombre de producto y una cantidad
+                        parametros[decodeURIComponent(par[0])] = parseInt(par[1]) || 0; // Convertir el valor a número, si no es numérico, se asigna 0
+                    }
+                }
+            }
+            return parametros;
+        }
+
+        // Función para mostrar el ticket de compra
+        function mostrarTicket() {
+            let productos = obtenerParametrosURL();
+            let listaProductosHTML = "";
+            let total = 0;
+
+            for (const producto in productos) {
+                let cantidad = productos[producto];
+                let precioUnitario = obtenerPrecioProducto(producto);
+                if (!isNaN(cantidad) && !isNaN(precioUnitario)) { // Verificar si la cantidad y el precio son números válidos
+                    let precioTotal = cantidad * precioUnitario;
+                    listaProductosHTML += `<li>${producto}: ${cantidad} x $${precioUnitario} = $${precioTotal}</li>`;
+                    total += precioTotal;
+                }
+            }
+
+            document.getElementById("lista-productos").innerHTML = listaProductosHTML;
+            document.getElementById("total").textContent = total.toFixed(2);
+        }
+
+        // Función para obtener el precio unitario del producto
+        function obtenerPrecioProducto(nombreProducto) {
+            // Aquí deberías implementar la lógica para obtener el precio del producto según su nombre
+            // Por ahora, devolvemos un precio fijo para cada producto
+            switch (nombreProducto) {
+                case "Dog chow":
+                    return 299; // Precio del Dog chow
+                case "Pedigree":
+                    return 99; // Precio del Pedigree
+                case "Nupec":
+                    return 599; // Precio de Nupec
+                case "Royal":
+                    return 499; // Precio del Royal
+                case "Catchow":
+                    return 199; // Precio Catchow
+                case "Pasta":
+                    return 89; // Precio Pasta
+                case "Shampoo":
+                    return 131; // Precio shampoo
+                case "Sobre":
+                    return 19; // Precio Sobre
+                // Agrega lógica similar para los demás productos
+                default:
+                    return 0; // Precio predeterminado para productos no encontrados
+            }
+        }
+
+        // Función para descargar el PDF
+        function descargarPDF() {
+            const doc = new jsPDF();
+            const listaProductos = document.getElementById("lista-productos").innerHTML;
+            const total = document.getElementById("total").textContent;
+            doc.text("Ticket de Compra", 10, 10);
+            doc.text(listaProductos, 10, 20);
+            doc.text("Total: " + total, 10, 200);
+            doc.save("ticket_compra.pdf"); // Guardar el PDF con un nombre de archivo
+        }
+
+        // Llama a la función mostrarTicket cuando la página esté completamente cargada
+        window.onload = mostrarTicket;
+    </script>
+</body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+<script>
+    // Función para descargar el PDF sin el elemento de impresión
+    function descargarPDF() {
+        const element = document.querySelector(".container");
+
+        // Eliminar el elemento de impresión
+        const elementoImprimir = element.querySelector(".imprimir");
+        if (elementoImprimir) {
+            elementoImprimir.remove();
+        }
+
+        html2pdf()
+            .from(element)
+            .save();
+    }
+/*aquiii*/ 
+</script>
+
+
+

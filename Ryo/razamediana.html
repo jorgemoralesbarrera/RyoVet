@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razas Medianas</title>
+    <link rel="icon" href="img/pelota_verde.ico"> <!-- Icono de pelota verde en la pestaña del navegador -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #5cb85c; /* Cambio de color a verde pasto */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 32px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .info {
+            max-width: 500px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .info h2 {
+            color: #5cb85c; /* Cambio de color a verde pasto */
+            margin-top: 0;
+        }
+
+        .info p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            background-color: #5cb85c; /* Cambio de color a verde pasto */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image-container {
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+            flex: 1; /* Ajuste para ocupar todo el espacio disponible */
+        }
+
+        .image-container:hover {
+            transform: scale(1.05);
+        }
+
+        .image-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .main-image {
+            width: 100%;
+        }
+
+        .secondary-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .secondary-images .image-container {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="img/RYO2.png" alt="Logo" class="logo">
+    <h1>Razas de Perros Medianos</h1>
+</header>
+
+<div class="container">
+    <div class="info">
+        <h2>Razas Medianas</h2>
+        <p>
+            Las razas de perros medianos son una excelente opción para aquellos que buscan compañeros de tamaño moderado que aún conservan muchas de las características de las razas grandes y pequeñas. Con un peso típico que oscila entre 10 y 25 kg y una altura en la cruz de 40 a 55 cm, estas razas son versátiles y adaptables a una variedad de entornos.
+
+            Algunas razas medianas populares incluyen al Bulldog Francés, Beagle, Cocker Spaniel, Border Collie, y Dálmata. Estos perros suelen ser buenos compañeros familiares, ya que son lo suficientemente robustos para jugar con niños pero no tan grandes como para abrumar el espacio doméstico.
+
+            Aunque tienen un tamaño moderado, las razas medianas pueden requerir una cantidad significativa de ejercicio y estimulación mental para mantenerse felices y saludables. Es esencial brindarles suficiente actividad física y entrenamiento adecuado para satisfacer sus necesidades energéticas y mentales.
+
+            Además de su tamaño y temperamento, las razas medianas pueden tener una variedad de características distintivas y necesidades de cuidado. Es importante investigar y comprender las particularidades de cada raza antes de comprometerse con la adopción o compra de un perro mediano.
+        </p>
+        <a href="notas.html" class="button">Volver</a>
+    </div>
+
+    <div class="image-container">
+        <img src="img/razmed1.png" alt="Raza Mediana 1" class="main-image">
+    </div>
+
+    <div class="secondary-images">
+        <div class="image-container" id="secondary1" onclick="changeImage(this)">
+            <img src="img/razmed2.png" alt="Raza Mediana 2">
+        </div>
+        <div class="image-container" id="secondary2" onclick="changeImage(this)">
+            <img src="img/razmed3.png" alt="Raza Mediana 3">
+        </div>
+    </div>
+</div>
+
+<script>
+    function changeImage(element) {
+        var mainImage = document.querySelector('.main-image');
+        var tempSrc = mainImage.src;
+        mainImage.src = element.querySelector('img').src;
+        element.querySelector('img').src = tempSrc;
+    }
+</script>
+
+</body>
+</html>

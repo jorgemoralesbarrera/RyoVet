@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="agregaralcarrito.js"></script>
+</head>
+<body>
+
+
+<header>
+    <!-- Tu barra de navegación -->
+    <div class="container-navbar">
+        <nav class="navbar container">
+            <i class="fa-solid fa-bars"></i>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="consejos.html">Consejos</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="notas.html">Notas</a></li>
+
+
+<!-- Icono de carrito de compras -->
+<i class="fas fa-shopping-basket"></i>
+                
+<!-- Contenido del carrito de compras -->
+<div class="content-shopping-cart" id="cart-button" onclick="irATicket()">
+    <span class="text">Carrito</span>
+    <span class="number" id="cart-counter">(0)</span>
+</div>
+
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+<section class="container top-products">
+    <h1 class="heading-1">Mejores Productos</h1>
+
+
+    <div class="container-options">
+        <span id="destacados" class="option selected">Destacados</span>
+        <span id="mas-recientes" class="option">Más recientes</span>
+        <span id="mejores-vendidos" class="option">Mejores Vendidos</span>
+    </div>
+    
+
+    <div class="container-products" id="product-container">
+        <!-- Aquí se insertarán los productos según la opción seleccionada -->
+        <!-- Producto 1 -->
+        <div class="card-product">
+    <div class="container-img">
+        <img src="img/pedigree.png" alt="Cafe Irish" />
+        <span class="discount">-20%</span>
+        <div class="button-group">
+
+            <a href="pedigree.html" class="eye-link">
+                <span>
+                    <i class="fa-regular fa-eye"></i>
+                </span>
+            </a>
+			<a href="https://www.pedigree.com.mx/" class="compare-link">
+				<span>
+					<i class="fa-solid fa-code-compare"></i>
+				</span>
+            </a>
+            
+        </div>
+    </div>
+    <div class="content-card-product">
+        <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+        </div>
+        <h3>Pedigree</h3>
+        <!-- Llamada a la función agregarAlCarrito() cuando se hace clic en el botón -->
+        <span class="add-cart btn-add-to-cart" onclick="agregarAlCarrito('Pedigree')">
+            <i class="fa-solid fa-basket-shopping"></i>
+        </span>
+
+
+
+
+
+        <p class="price">$99 <span>$151</span></p>
+    </div>                    
+</div>
+
+        <!-- Producto 2 -->
+        <div class="card-product">
+            <div class="container-img">
+                <img src="img/Dog chow.png" alt="Dog chow" />
+                <span class="discount">-22%</span>
+                <div class="button-group">
+                    <a href="dogchow.html" class="eye-link">
+                        <span>
+                            <i class="fa-regular fa-eye"></i>
+                </span>
+                </a>
+                        <a href="https://purina.com.mx/dogchow" class="compare-link">
+                            <span>
+                                <i class="fa-solid fa-code-compare"></i>
+                            </span>
+                        </a>
+                </div>
+            </div>
+            <div class="content-card-product">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <h3>Dog chow</h3>
+                <span class="add-cart btn-add-to-cart" onclick="agregarAlCarrito('Dog chow', 299)">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </span>
+                <p class="price">$299 <span>$323</span></p>
+            </div>
+        </div>
+
+
+        <!-- Producto 3 -->
+        <div class="card-product">
+						<div class="container-img">
+							<img src="img/nupec.png" alt="Nupec" />
+							<div class="button-group">
+                                <a href="nupec.html" class="eye-link">
+                                    <span>
+                                        <i class="fa-regular fa-eye"></i>
+                            </span>
+                            </a>
+                            <a href="https://nupec.com/" class="compare-link">
+                                <span>
+                                    <i class="fa-solid fa-code-compare"></i>
+                                </span>
+                            </a>
+                    </div>
+                </div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
+							<h3>Nupec</h3>
+							<span class="add-cart btn-add-to-cart" onclick="agregarAlCarrito('Nupec', 599)">
+								<i class="fa-solid fa-basket-shopping"></i>
+							</span>
+							<p class="price">$599</p>
+						</div>
+					</div>
+
+
+
+        <!-- Producto 4 -->
+        <div class="card-product">
+            <div class="container-img">
+                <img src="img/Royal.png" alt="Royal" />
+                <div class="button-group">
+                    <a href="royalcanin.html" class="eye-link">
+                        <span>
+                            <i class="fa-regular fa-eye"></i>
+                </span>
+                </a>
+                <a href="https://www.royalcanin.com/mx" class="compare-link">
+                    <span>
+                        <i class="fa-solid fa-code-compare"></i>
+                    </span>
+                </a>
+        </div>
+    </div>
+            <div class="content-card-product">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <h3>Royal</h3>
+                <span class="add-cart btn-add-to-cart" onclick="agregarAlCarrito('Royal', 499)">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </span>
+                <p class="price">$499</p>
+            </div>
+        </div>
+
+        <!-- Producto 5 -->
+        <div class="card-product">
+            <div class="container-img">
+                <img src="img/cat chow.png" alt="Cafe Irish" />
+                <span class="discount">-13%</span>
+                <div class="button-group">
+                    <a href="catchow.html" class="eye-link">
+                        <span>
+                            <i class="fa-regular fa-eye"></i>
+                </span>
+                </a>
+                <a href="https://purina.com.mx/catchow" class="compare-link">
+                    <span>
+                        <i class="fa-solid fa-code-compare"></i>
+                    </span>
+                </a>
+        </div>
+    </div>
+            <div class="content-card-product">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <h3>Cat Chow</h3>
+                <span class="add-cart btn-add-to-cart" onclick="agregarAlCarrito('Catchow', 199)">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </span>
+                <p class="price">$199 <span>$311</span></p>
+            </div>
+        </div>
+
+
+        <!-- Producto 6 -->
+        <div class="card-product">
+            <div class="container-img">
+                <img
+                    src="img/pasta.png"
+                    alt="Cafe incafe-ingles.jpg"
+                />
+                <span class="discount">-22%</span>
+                <div class="button-group">
+                    <a href="pasta.html" class="eye-link">
+                        <span>
+                            <i class="fa-regular fa-eye"></i>
+                </span>
+                </a>
+                <a href="https://www.fancypets.mx/" class="compare-link">
+                    <span>
+                        <i class="fa-solid fa-code-compare"></i>
+                    </span>
+                </a>
+        </div>
+    </div>
+            <div class="content-card-product">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <h3>Pasta Dental</h3>
+                <span class="add-cart btn-add-to-cart" onclick="agregarAlCarrito('Pasta', 89)">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </span>
+                <p class="price">$89 <span>$129</span></p>
+            </div>
+        </div>
+        <!-- Producto 7 -->
+        <div class="card-product">
+            <div class="container-img">
+                <img src="img/animal planet.png" alt="Cafe Viena" />
+                <span class="discount">-30%</span>
+                <div class="button-group">
+                    <a href="shampoo.html" class="eye-link">
+                        <span>
+                            <i class="fa-regular fa-eye"></i>
+                </span>
+                </a>
+                <a href="https://animalplanetmexico.com/" class="compare-link">
+                    <span>
+                        <i class="fa-solid fa-code-compare"></i>
+                    </span>
+                </a>
+        </div>
+    </div>
+            <div class="content-card-product">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <h3>Shampoo Animal P</h3>
+                <span class="add-cart btn-add-to-cart" onclick="agregarAlCarrito('Shampoo', 131)">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </span>
+                <p class="price">$131 <span>$211</span></p>
+            </div>
+        </div>
+        <!-- Producto 8 -->
+        <div class="card-product">
+            <div class="container-img">
+                <img src="img/sobre.png" alt="Cafe Liqueurs" />
+                <div class="button-group">
+                    <a href="sobre.html" class="eye-link">
+                        <span>
+                            <i class="fa-regular fa-eye"></i>
+                </span>
+                </a>
+                <a href="https://purina.com.mx/catchow" class="compare-link">
+                    <span>
+                        <i class="fa-solid fa-code-compare"></i>
+                    </span>
+                </a>
+        </div>
+    </div>
+            <div class="content-card-product">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <h3>Cat Chow Pez</h3>
+                <span class="add-cart btn-add-to-cart" onclick="agregarAlCarrito('Sobre', 19)">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </span>
+
+                <p class="price">$19</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container container-footer">
+        <div class="menu-footer">
+            <div class="contact-info">
+                <p class="title-footer">Información de Contacto</p>
+                <ul>
+                    <li>
+                        Dirección: Republica Mexicana, Coacalco de Berriozabal
+                    </li>
+                    <li>Teléfono: +52 554901 4066</li>
+                    <li>Tik Tok: JooryMoba</li>
+                    <li>EmaiL: jorgemoralesbarreragames@gmail.com</li>
+                </ul>
+                <div class="social-icons">
+                    <span class="facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </span>
+                    <span class="twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </span>
+                    <span class="youtube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </span>
+                    <span class="pinterest">
+                        <i class="fa-brands fa-pinterest-p"></i>
+                    </span>
+                    <span class="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="information">
+                <p class="title-footer">Información</p>
+                <ul>
+                    <li><a href="#">Acerca de Nosotros</a></li>
+                    <li><a href="#">Politicas de Privacidad</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                </ul>
+            </div>
+
+            <div class="newsletter">
+                <p class="title-footer"> Siguenos en nuestra cuenta de INSTAGRAM</p>
+
+                <div class="content">
+                    <p>
+                        Unete a nuestra familia y disfruta de nuestras actualizaciones diarias
+                    </p>
+                    <a href="https://www.instagram.com/ryovet/" target="_blank" rel="noopener noreferrer">
+                   
+                        <button>Follow Us</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>
+                Desarrollado por Joory Moba para Ryo &copy; 2024
+            </p>
+
+            <img src="img/payment.png" alt="Pagos">
+        </div>
+    </div>
+</footer>
+
+
+<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+<script>
+// Función para mostrar los productos según la opción seleccionada
+function filtrarProductos(tipo) {
+        var productos = document.querySelectorAll('.card-product');
+
+        productos.forEach(function(producto) {
+            if (tipo === 'destacados') {
+                producto.style.display = 'block';
+            } else if (tipo === 'mas-recientes') {
+                var tituloProducto = producto.querySelector('h3').textContent;
+                if (tituloProducto === 'Shampoo Animal P' || tituloProducto === 'Pasta Dental') {
+                    producto.style.display = 'block';
+                } else {
+                    producto.style.display = 'none';
+                }
+            } else if (tipo === 'mejores-vendidos') {
+                var tituloProducto = producto.querySelector('h3').textContent;
+                if (tituloProducto === 'Pedigree' || tituloProducto === 'Dog Chow' || tituloProducto === 'Nupec' || tituloProducto === 'Royal Canin' || tituloProducto === 'Cat Chow') {
+                    producto.style.display = 'block';
+                } else {
+                    producto.style.display = 'none';
+                }
+            }
+        });
+    }
+
+    // Event Listeners para los botones de opciones
+    document.getElementById('destacados').addEventListener('click', function() {
+        filtrarProductos('destacados');
+    });
+
+    document.getElementById('mas-recientes').addEventListener('click', function() {
+        filtrarProductos('mas-recientes');
+    });
+
+    document.getElementById('mejores-vendidos').addEventListener('click', function() {
+        filtrarProductos('mejores-vendidos');
+    });
+
+    document.querySelectorAll('.option').forEach(function(option) {
+    option.addEventListener('click', function() {
+        // Quita la clase 'selected' de todas las opciones
+        document.querySelectorAll('.option').forEach(function(opt) {
+            opt.classList.remove('selected');
+        });
+        // Agrega la clase 'selected' solo a la opción seleccionada
+        this.classList.add('selected');
+    });
+});
+
+
+
+</script>
+</body>
+</html>
+

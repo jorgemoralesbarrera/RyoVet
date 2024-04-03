@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto - Royal Canin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Agregamos Font Awesome para íconos -->
+    <style>
+        /* Reset de margenes y padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 20px; /* Añadimos padding */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header img {
+            width: 50%; /* Tamaño del logo reducido al 50% */
+            max-width: 200px; /* Máximo tamaño */
+            margin-bottom: 10px; /* Espacio inferior */
+        }
+
+        .product-image {
+            width: 50%;
+            float: left;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .product-image img {
+            width: auto;
+            max-height: 400px; /* Altura máxima fija */
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .product-image img:hover {
+            transform: scale(1.1);
+        }
+
+        .thumbnails {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            transition: transform 0.3s ease-in-out; /* Transición para el efecto escalera */
+        }
+
+        .thumbnails img {
+            width: calc(25% - 10px); /* Ajuste del tamaño y el espacio entre miniaturas */
+            border-radius: 5px;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out; /* Transición para el efecto escalera */
+        }
+
+        .thumbnails img:hover {
+            transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+        }
+
+        .product-details {
+            width: 50%;
+            float: left;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .product-details h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #228B22; /* Color verde */
+        }
+
+        .product-details p {
+            margin-bottom: 10px;
+        }
+
+        .product-details strong {
+            color: #228B22; /* Color verde */
+        }
+
+        .product-details .price {
+            font-size: 24px;
+            color: #228B22; /* Color verde */
+            margin-bottom: 20px;
+        }
+
+        .product-details .price span {
+            color: #228B22; /* Color verde para el precio */
+        }
+
+        .product-details .description {
+            margin-bottom: 20px;
+        }
+
+        .product-details .description h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .product-details .description ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .product-details .description ul li {
+            margin-bottom: 5px;
+        }
+
+        /* Estilos para el enlace de volver */
+        .back-to-products {
+            background-color: #228B22; /* Color verde */
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px; /* Añadimos un espacio superior */
+        }
+
+        .back-to-products:hover {
+            background-color: #006400; /* Tonos más oscuros de verde al pasar el cursor */
+        }
+
+        /* Estilos para el ícono de flecha */
+        .back-to-products i {
+            margin-right: 5px;
+        }
+
+        /* Estilos para las estrellitas */
+        .stars {
+            color: #228B22; /* Color verde */
+            text-align: center; /* Centrar las estrellitas */
+            margin-top: 20px; /* Añadir un espacio superior */
+        }
+
+        .fa-star {
+            font-size: 16px;
+            margin-right: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="product-image">
+            <img id="main-img" src="img/roy1.png" alt="Royal Canin" onclick="changeImage(this)">
+            <div class="thumbnails" id="thumbnail-container">
+                <img src="img/roy2.png" alt="Thumbnail 2" onclick="changeImage(this)">
+                <img src="img/roy3.png" alt="Thumbnail 3" onclick="changeImage(this)">
+                <img src="img/roy4.png" alt="Thumbnail 4" onclick="changeImage(this)">
+                <img src="img/roy5.png" alt="Thumbnail 5" onclick="changeImage(this)">
+            </div>
+        </div>
+        <div class="product-details">
+            <h2>Royal Canin</h2>
+            <p class="price"><strong>Precio:</strong> <span>$499.00</span></p>
+            <div class="description">
+                <h3>Descripción del producto:</h3>
+                <p>Alimento balanceado formulado para perros cachorros de raza pequeña, de un mes de nacidos hasta un año de edad, hembras gestantes y lactantes.</p>
+                <ul>
+                    <li><i class="fas fa-paw" style="color: #228B22;"></i> Marca: Royal Canin</li>
+                    <li><i class="fas fa-paw" style="color: #228B22;"></i> Sabor: Carne</li>
+                    <li><i class="fas fa-paw" style="color: #228B22;"></i> Rango de edad: Mayor</li>
+                    <li><i class="fas fa-paw" style="color: #228B22;"></i> Forma del producto: Pastilla</li>
+                    <li><i class="fas fa-paw" style="color: #228B22;"></i> Cantidad de unidades: 1100 gramos</li>
+                    <li><i class="fas fa-paw" style="color: #228B22;"></i> Peso del producto: 2.5 Libras</li>
+                    <li><i class="fas fa-paw" style="color: #228B22;"></i> Recomendación de raza: Razas pequeñas</li>
+                </ul>
+            </div>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <a href="productos.html" class="back-to-products"><i class="fas fa-arrow-left"></i>Ver más</a>
+        </div>
+    </div>
+
+    <script>
+        function changeImage(clickedImage) {
+            var mainImage = document.getElementById('main-img');
+            var thumbnailsContainer = document.getElementById('thumbnail-container');
+
+            if (clickedImage === mainImage) {
+                return; // Si se hace clic en la imagen principal, no hacer nada
+            }
+
+            // Guardar la imagen principal actual en una miniatura
+            var tempImg = document.createElement('img');
+            tempImg.src = mainImage.src;
+            tempImg.alt = mainImage.alt;
+            tempImg.onclick = function() { changeImage(this); };
+            tempImg.style.height = '100%'; // Altura máxima fija
+            tempImg.style.borderRadius = '5px';
+            tempImg.style.boxShadow = '0 0 3px rgba(0, 0, 0, 0.3)';
+            tempImg.style.cursor = 'pointer';
+            tempImg.style.transition = 'transform 0.3s ease-in-out';
+            tempImg.style.transform = 'translateY(0)'; // Resetear la transformación
+            thumbnailsContainer.prepend(tempImg);
+
+            // Actualizar la imagen principal con la imagen clicada
+            mainImage.src = clickedImage.src;
+            mainImage.alt = clickedImage.alt;
+
+            // Eliminar la miniatura clicada del conjunto de miniaturas
+            thumbnailsContainer.removeChild(clickedImage);
+        }
+    </script>
+</body>
+</html>

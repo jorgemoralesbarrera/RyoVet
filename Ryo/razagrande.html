@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razas Grandes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: orange;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 32px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .info {
+            max-width: 500px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .info h2 {
+            color: orange;
+            margin-top: 0;
+        }
+
+        .info p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            background-color: orange;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image-container {
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+            flex: 1; /* Ajuste para ocupar todo el espacio disponible */
+        }
+
+        .image-container:hover {
+            transform: scale(1.05);
+        }
+
+        .image-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .main-image {
+            width: 100%;
+        }
+
+        .secondary-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .secondary-images .image-container {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="img/RYO2.png" alt="Logo" class="logo">
+    <h1>Razas de Perros Grandes</h1>
+</header>
+
+<div class="container">
+    <div class="info">
+        <h2>Razas Grandes</h2>
+        <p>
+            Las razas de perros grandes, que suelen pesar más de 25 kg y tienen una altura mayor a 55 cm en la cruz, son muy populares entre los amantes de los perros por su impresionante presencia y lealtad. Estas razas pueden ser excelentes compañeros de familia y guardianes.
+
+            Algunas razas grandes populares incluyen al Pastor Alemán, Labrador Retriever, Golden Retriever, Rottweiler, Boxer y Dogo Alemán. Estos perros requieren ejercicio regular y entrenamiento adecuado debido a su tamaño y energía.
+
+            Aunque los perros grandes pueden ser amigables y gentiles, es esencial socializarlos adecuadamente desde una edad temprana y proporcionarles la formación necesaria para garantizar su comportamiento adecuado en diversas situaciones.
+
+            Es importante tener en cuenta que las razas grandes también pueden tener tendencias específicas de salud y necesidades alimenticias, por lo que es vital investigar y comprender las necesidades particulares de cada raza antes de decidirse por una.
+
+            A pesar de su gran tamaño, muchos perros grandes son cariñosos, juguetones y pueden adaptarse bien a la vida en interiores, siempre que reciban suficiente ejercicio y estén involucrados en la vida familiar.
+        </p>
+        <a href="notas.html" class="button">Volver</a>
+    </div>
+
+    <div class="image-container">
+        <img src="img/razag1.png" alt="Raza Grande 1" class="main-image">
+    </div>
+
+    <div class="secondary-images">
+        <div class="image-container" id="secondary1" onclick="changeImage(this)">
+            <img src="img/razag2.png" alt="Raza Grande 2">
+        </div>
+        <div class="image-container" id="secondary2" onclick="changeImage(this)">
+            <img src="img/razag3.png" alt="Raza Grande 3">
+        </div>
+    </div>
+</div>
+
+<script>
+    function changeImage(element) {
+        var mainImage = document.querySelector('.main-image');
+        var tempSrc = mainImage.src;
+        mainImage.src = element.querySelector('img').src;
+        element.querySelector('img').src = tempSrc;
+    }
+</script>
+
+</body>
+</html>

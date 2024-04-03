@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secretos del Mundo Acuático</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #3fa9f5; /* Cambio de color a azul */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 32px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .info {
+            max-width: 500px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .info h2 {
+            color: #3fa9f5; /* Cambio de color a azul */
+            margin-top: 0;
+        }
+
+        .info p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info ul li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .info ul li:before {
+            content: '\1F41F'; /* Código Unicode para el icono de pez */
+            font-size: 24px;
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: #3fa9f5; /* Cambio de color a azul */
+        }
+
+        .button {
+            background-color: #3fa9f5; /* Cambio de color a azul */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image-container {
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+            flex: 1; /* Ajuste para ocupar todo el espacio disponible */
+        }
+
+        .image-container:hover {
+            transform: scale(1.05);
+        }
+
+        .image-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .main-image {
+            width: 100%;
+        }
+
+        .secondary-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .secondary-images .image-container {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="img/RYO2.png" alt="Logo" class="logo">
+    <h1>Secretos del Mundo Acuático</h1>
+</header>
+
+<div class="container">
+    <div class="info">
+        <h2>Secretos del Mundo Acuático</h2>
+        <p>
+            Los océanos y ríos del mundo albergan una gran variedad de vida marina, desde peces hasta criaturas más exóticas. Aquí hay algunos secretos fascinantes del mundo acuático:
+        </p>
+        <ul>
+            <li>Los peces de aguas profundas pueden sobrevivir en condiciones extremas de presión y oscuridad, gracias a adaptaciones especiales como cuerpos comprimidos y bioluminiscencia.</li>
+            <li>Algunas especies de peces tienen la capacidad de cambiar de color para camuflarse con su entorno y evitar a los depredadores.</li>
+            <li>El pez payaso y la anémona de mar tienen una relación simbiótica única, donde el pez payaso está protegido por las células urticantes de la anémona y, a su vez, limpia y cuida a la anémona.</li>
+            <li>Los tiburones son algunos de los depredadores más temidos del océano, pero también son esenciales para mantener el equilibrio ecológico en los ecosistemas marinos.</li>
+            <li>Los delfines son mamíferos marinos altamente inteligentes que se comunican entre sí a través de una variedad de sonidos y comportamientos, incluidos los saltos acrobáticos y las vocalizaciones complejas.</li>
+        </ul>
+        <a href="notas.html" class="button">Volver</a>
+    </div>
+
+    <div class="image-container">
+        <img src="img/pez1.png" alt="Secreto del Mundo Acuático 1" class="main-image">
+    </div>
+
+    <div class="secondary-images">
+        <div class="image-container" id="secondary1" onclick="changeImage(this)">
+            <img src="img/pez2.png" alt="Secreto del Mundo Acuático 2">
+        </div>
+        <div class="image-container" id="secondary2" onclick="changeImage(this)">
+            <img src="img/pez3.png" alt="Secreto del Mundo Acuático 3">
+        </div>
+    </div>
+</div>
+
+<script>
+    function changeImage(element) {
+        var mainImage = document.querySelector('.main-image');
+        var tempSrc = mainImage.src;
+        mainImage.src = element.querySelector('img').src;
+        element.querySelector('img').src = tempSrc;
+    }
+</script>
+
+</body>
+</html>

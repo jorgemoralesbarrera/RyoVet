@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curiosidades de Gatos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: orange;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 32px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .info {
+            max-width: 500px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .info h2 {
+            color: orange;
+            margin-top: 0;
+        }
+
+        .info p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info ul li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .info ul li:before {
+            content: '\1F431'; /* Código Unicode para la cabeza de un gato */
+            font-size: 24px;
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: orange;
+        }
+
+        .button {
+            background-color: orange;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image-container {
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+            flex: 1; /* Ajuste para ocupar todo el espacio disponible */
+        }
+
+        .image-container:hover {
+            transform: scale(1.05);
+        }
+
+        .image-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .main-image {
+            width: 100%;
+        }
+
+        .secondary-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .secondary-images .image-container {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="img/RYO2.png" alt="Logo" class="logo">
+    <h1>Curiosidades de Gatos</h1>
+</header>
+
+<div class="container">
+    <div class="info">
+        <h2>Curiosidades de Gatos</h2>
+        <p>
+            Los gatos son fascinantes criaturas con una serie de comportamientos y características únicas que los hacen especiales. Aquí hay algunas curiosidades sobre los gatos que tal vez no conozcas:
+        </p>
+        <ul>
+            <li>Los gatos tienen la habilidad de girar sus orejas hasta 180 grados para escuchar mejor los sonidos a su alrededor.</li>
+            <li>Los gatos tienen almohadillas únicas en sus narices, al igual que las huellas dactilares humanas, que pueden ser utilizadas para identificar a un gato de manera única.</li>
+            <li>Los gatos pueden dormir hasta 16 horas al día, lo que significa que pasan aproximadamente dos tercios de sus vidas durmiendo.</li>
+            <li>A diferencia de los perros, los gatos no tienen una relación de dominio con los humanos, sino que los consideran como iguales.</li>
+            <li>Los gatos tienen la capacidad de saltar hasta seis veces su longitud corporal en un solo salto, gracias a sus poderosas patas traseras.</li>
+        </ul>
+        <a href="notas.html" class="button">Volver</a>
+    </div>
+
+    <div class="image-container">
+        <img src="img/razgat1.png" alt="Curiosidad de Gato 1" class="main-image">
+    </div>
+
+    <div class="secondary-images">
+        <div class="image-container" id="secondary1" onclick="changeImage(this)">
+            <img src="img/razgat2.png" alt="Curiosidad de Gato 2">
+        </div>
+        <div class="image-container" id="secondary2" onclick="changeImage(this)">
+            <img src="img/razgat3.png" alt="Curiosidad de Gato 3">
+        </div>
+    </div>
+</div>
+
+<script>
+    function changeImage(element) {
+        var mainImage = document.querySelector('.main-image');
+        var tempSrc = mainImage.src;
+        mainImage.src = element.querySelector('img').src;
+        element.querySelector('img').src = tempSrc;
+    }
+</script>
+
+</body>
+</html>
